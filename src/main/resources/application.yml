@@ -1,0 +1,17 @@
+server:
+  port: 8070
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+  datasource:
+    username: postgres
+    password: 123456789
+    url: jdbc:postgresql://localhost:5432/myblogdb
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

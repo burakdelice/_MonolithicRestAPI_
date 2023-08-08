@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyApp</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 1.5em 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s;
+    }
+    h1, h2 {
+      margin: 0;
+      padding-bottom: 0.5em;
+      font-family: 'Montserrat', sans-serif;
+      color: #34495e;
+    }
+    p {
+      line-height: 1.6;
+      color: #555;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1em;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .users-button {
+      background-color: #3498db;
+    }
+    .posts-button {
+      background-color: #e74c3c;
+    }
+    .categories-button {
+      background-color: #2ecc71;
+    }
+    .button:hover {
+      background-color: #2c3e50;
+      transform: scale(1.05);
+    }
+    header {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 1.5em 0;
+      position: relative;
+      transition: background-color 0.3s;
+    }
+    header h1 {
+      margin: 0;
+      padding-bottom: 0.5em;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      font-size: 28px;
+      transition: transform 0.3s, text-shadow 0.3s;
+    }
+    header:hover {
+      background-color: #34495e;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Welcome!</h1>
+</header>
+<div class="container">
+  <div class="button-container">
+    <button class="button users-button" onclick="redirectToUsers()">Go to Users</button>
+    <button class="button posts-button" onclick="redirectToPosts()">Go to Posts</button>
+    <button class="button categories-button" onclick="redirectToCategories()">Go to Categories</button>
+  </div>
+</div>
+<div class="container">
+  <h2>About Program</h2>
+  <p>This application is a web application developed using Spring Boot and RESTful services. You can perform various operations through the endpoints listed below.</p>
+
+  <h2>User Operations</h2>
+  <ul>
+    <li><strong>GET</strong> - List Users: <code>/users/</code></li>
+    <li><strong>GET</strong> - User Details: <code>/users/{id}</code></li>
+    <li><strong>PUT</strong> - Update User: <code>/users/{id}</code></li>
+    <li><strong>DELETE</strong> - Delete User: <code>/users/{id}</code></li>
+    <li><strong>POST</strong> - Add New User: <code>/users/</code></li>
+  </ul>
+
+  <h2>Post Operations</h2>
+  <ul>
+    <li><strong>GET</strong> - List Posts: <code>/posts/</code></li>
+    <li><strong>GET</strong> - User's Posts: <code>/posts/users/{id}</code></li>
+    <li><strong>GET</strong> - User's Post Order: <code>/posts/orderuser</code></li>
+    <li><strong>GET</strong> - Sort User's Posts by Category: <code>/posts/ordercategory</code></li>
+    <li><strong>GET</strong> - Sort Posts by Category: <code>/posts/category/{id}</code></li>
+    <li><strong>GET</strong> - Sort User's Posts by Publish Date: <code>/posts/orderpublish</code></li>
+    <li><strong>PUT</strong> - Update Post: <code>/posts/{id}</code></li>
+    <li><strong>DELETE</strong> - Delete Post: <code>/posts/{id}</code></li>
+    <li><strong>POST</strong> - Add New Post: <code>/posts/create</code></li>
+  </ul>
+
+  <h2>Category Operations</h2>
+  <ul>
+    <li><strong>GET</strong> - List Categories: <code>/categories/</code></li>
+    <li><strong>GET</strong> - Category Details: <code>/categories/{id}</code></li>
+    <li><strong>PUT</strong> - Update Category: <code>/categories/{id}</code></li>
+    <li><strong>DELETE</strong> - Delete Category: <code>/categories/{id}</code></li>
+    <li><strong>POST</strong> - Add New Category: <code>/categories/</code></li>
+    <li><strong>GET</strong> - List Categories by Name: <code>/categories/name</code></li>
+  </ul>
+  <script>
+    function redirectToUsers() {
+      window.location.href = "/users/";
+    }
+
+    function redirectToPosts() {
+      window.location.href = "/posts/";
+    }
+
+    function redirectToCategories() {
+      window.location.href = "/categories/";
+    }
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories List</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        tr:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('tr');
+            rows.forEach(row => {
+                row.addEventListener('click', () => {
+                    row.style.backgroundColor = 'lightblue';
+                });
+                row.addEventListener('mouseout', () => {
+                    row.style.backgroundColor = '';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<h1>Categories List</h1>
+<table>
+    <tr th:each="category: ${listCategories}">
+        <td th:text="${category.getId()}"></td>
+        <td th:text="${category.getName()}"></td>
+        <td th:text="${category.getDescription()}"></td>
+    </tr>
+</table>
+<a href="/api/categories/addCategory">Add Category</a>
+</body>
+</html>
